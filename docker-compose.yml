@@ -1,0 +1,35 @@
+version: '3'
+
+volumes:
+  postgres: 
+    driver: local
+
+services:
+  postgres:
+    image: postgres:10
+    ports:
+      - 54320:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: todoDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+  portainer:
+    # build:
+    #  context: ./_portainer
+    #  dockerfile: Dockerfile
+
+    image: portainer/portainer
+    # restart: always
+
+    volumes:
+      - ./opt/portainer:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    ports:
+      - 9000:9000
+
+    hostname: portainer
+    container_name: portainer
+    network_mode: bridge
