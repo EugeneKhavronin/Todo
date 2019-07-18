@@ -13,6 +13,7 @@ using System.IO;
 using ToDo.Database.Models;
 using ToDo.Database;
 using ToDo.Domain;
+using ToDo.Domain.Models.User;
 
 namespace ToDo.API
 {
@@ -35,7 +36,8 @@ namespace ToDo.API
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly("ToDo.API")));
             //Настройки Identity
-            services.AddIdentity<AppUser, IdentityRole>().AddDefaultUI(UIFramework.Bootstrap4)
+            services.AddIdentity<AppUser, IdentityRole>()
+                .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<DatabaseContext>();
 
             services.Configure<IdentityOptions>(options =>

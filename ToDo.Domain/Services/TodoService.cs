@@ -20,13 +20,13 @@ namespace ToDo.Domain.Services
         }
 
         /// <inheritdoc />
-        public async Task<IEnumerable<TodoGetModel>> GetAll()
+        public async Task<IEnumerable<TodoViewModel>> GetAll()
         {
             var result = await _context.TodoItems.ToListAsync();
-            List<TodoGetModel> results = new List<TodoGetModel>();
+            List<TodoViewModel> results = new List<TodoViewModel>();
             foreach (var todoItem in result)
             {
-                var todoItemModel = new TodoGetModel()
+                var todoItemModel = new TodoViewModel()
                 {
                     Guid = todoItem.Guid,
                     Name = todoItem.Name,
@@ -39,10 +39,10 @@ namespace ToDo.Domain.Services
         }
 
         /// <inheritdoc />
-        public async Task<TodoGetModel> Get(Guid todoGuid)
+        public async Task<TodoViewModel> Get(Guid todoGuid)
         {
             var todoItem = await _context.TodoItems.FindAsync(todoGuid);
-            var todoGetModel = new TodoGetModel
+            var todoGetModel = new TodoViewModel
             {
                 Guid = todoItem.Guid,
                 Name = todoItem.Name,

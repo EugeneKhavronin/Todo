@@ -19,7 +19,7 @@ namespace ToDo.Domain.Services
         }
 
         /// <inheritdoc />
-        public async Task<string> Register(UserRegisterModel model)
+        public async Task<string> Register(UserModel model)
         {
             var user = new AppUser
             {
@@ -31,27 +31,42 @@ namespace ToDo.Domain.Services
                 Birthday = model.Birthday,
                 PhoneNumber = model.PhoneNumber
             };
-            _context.AppUsers.Add(user);
-            await _context.SaveChangesAsync();
+            await _userManager.CreateAsync(user);
+//            
+//            _context.AppUsers.Add(user);
+//            await _context.SaveChangesAsync();
+//
             return user.Id;
         }
 
         /// <inheritdoc />
-        public async Task<string> Edit(string id, UserEditModel editModel)
+        public async Task<string> Edit(string id, UserModel editModel)
         {
             var user = await _userManager.FindByIdAsync(id);
-            user.Id = editModel.Id;
-            user.Login = editModel.Login;
-            user.Password = editModel.Password;
-            user.PasswordHash = editModel.PasswordHash;
-            user.Birthday = editModel.Birthday;
-            user.Name = editModel.Name;
-            user.Surname = editModel.Surname;
-            user.Email = editModel.Email;
-            user.PhoneNumber = editModel.PhoneNumber;
-            _context.AppUsers.Update(user);
-            await _context.SaveChangesAsync();
-            return user.Id;
+            var editUser = new AppUser
+            {
+                Id = user.Id,
+                Login = user.Login,
+                Password = user.Password,
+                PasswordHash = user.PasswordHash,
+                Birthday = user.Birthday,
+                Name = user.Name,
+                Surname = user.Surname,
+                Email = user.Email,
+                SecurityStamp = user.SecurityStamp,
+                NormalizedUserName = user.NormalizedUserName,
+                NormalizedEmail = user.NormalizedEmail,
+                EmailConfirmed = user.EmailConfirmed,
+                ConcurrencyStamp = user.ConcurrencyStamp,
+                PhoneNumberConfirmed = user.PhoneNumberConfirmed,
+                TwoFactorEnabled = user.TwoFactorEnabled,
+                LockoutEnd = user.LockoutEnd,
+                LockoutEnabled = user.LockoutEnabled,
+                AccessFailedCount = user.AccessFailedCount,
+                PhoneNumber = user.PhoneNumber
+            };
+            await _userManager.UpdateAsync(editUser);
+            return editUser.Id;
         }
 
         /// <inheritdoc />

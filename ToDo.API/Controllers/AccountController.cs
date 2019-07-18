@@ -33,7 +33,7 @@ namespace ToDo.API.Controllers
         /// <returns></returns>
         [Route("GetUsers")]
         [HttpGet]
-        public async Task<IEnumerable<AccountGetModel>> GetUsers()
+        public async Task<IEnumerable<AccountViewModel>> GetUsers()
         {
             return await _accountInterface.GetUsers();
         }

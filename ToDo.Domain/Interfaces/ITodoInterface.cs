@@ -12,14 +12,14 @@ namespace ToDo.Domain.Interfaces
         /// Получение задачи
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<TodoGetModel>> GetAll();
+        Task<IEnumerable<TodoViewModel>> GetAll();
 
         /// <summary>
         /// Получение задачи
         /// </summary>
         /// <param name="guid">Уникальный идентификатор</param>
         /// <returns></returns>
-        Task<TodoGetModel> Get(Guid guid);
+        Task<TodoViewModel> Get(Guid guid);
 
         /// <summary>
         /// Добавление задачи

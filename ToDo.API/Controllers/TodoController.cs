@@ -30,7 +30,7 @@ namespace ToDo.API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<IEnumerable<TodoGetModel>> GetTodoItems()
+        public async Task<IEnumerable<TodoViewModel>> GetTodoItems()
         {
             return await _todoService.GetAll();
         }
@@ -41,7 +41,7 @@ namespace ToDo.API.Controllers
         /// <param name="guid">Уникальный идентификатор</param>
         /// <returns></returns>
         [HttpGet("{guid}")]
-        public async Task<TodoGetModel> GetTodoItem(Guid guid)
+        public async Task<TodoViewModel> GetTodoItem(Guid guid)
         {
             return await _todoService.Get(guid);
         }

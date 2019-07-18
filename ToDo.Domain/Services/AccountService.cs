@@ -22,13 +22,13 @@ namespace ToDo.Domain.Services
         }
 
         /// <inheritdoc />
-        public async Task<IEnumerable<AccountGetModel>> GetUsers()
+        public async Task<IEnumerable<AccountViewModel>> GetUsers()
         {
             var result = await _context.AppUsers.ToListAsync();
-            List<AccountGetModel> results = new List<AccountGetModel>();
+            List<AccountViewModel> results = new List<AccountViewModel>();
             foreach (var appUser in result)
             {
-                var accountModel = new AccountGetModel()
+                var accountModel = new AccountViewModel
                 {
                     Id = appUser.Id,
                     Name = appUser.Name,

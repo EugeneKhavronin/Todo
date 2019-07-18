@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using ToDo.Database.Models;
 using ToDo.Domain.Models.User;
 
 namespace ToDo.Domain.Interfaces
@@ -13,7 +14,7 @@ namespace ToDo.Domain.Interfaces
         /// </summary>
         /// <param name="model">Модель регистрации</param>
         /// <returns></returns>
-        Task<string> Register(UserRegisterModel model);
+        Task<string> Register(UserModel model);
         
         /// <summary>
         /// Изменение пользователя
@@ -21,7 +22,7 @@ namespace ToDo.Domain.Interfaces
         /// <param name="id">Уникальный идентификатор</param>
         /// <param name="editModel">Модель пользователя</param>
         /// <returns></returns>
-        Task<string> Edit(string id, UserEditModel editModel);
+        Task<string> Edit(string id, UserModel editModel);
 
         /// <summary>
         /// Удаление пользователя

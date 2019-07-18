@@ -11,7 +11,7 @@ namespace ToDo.Domain.Interfaces
         /// Получение списка пользователей
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<AccountGetModel>> GetUsers();
+        Task<IEnumerable<AccountViewModel>> GetUsers();
 
         /// <summary>
         /// Логин

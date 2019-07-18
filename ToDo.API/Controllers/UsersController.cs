@@ -30,7 +30,7 @@ namespace ToDo.API.Controllers
         /// <returns></returns>
         [Route("Register")]
         [HttpPost]
-        public async Task<string> Register(UserRegisterModel model)
+        public async Task<string> Register(UserModel model)
         {
             return await _userInterface.Register(model);
         }
@@ -43,7 +43,7 @@ namespace ToDo.API.Controllers
         /// <returns></returns>
         [Route("Edit")]
         [HttpPost]
-        public async Task<string> Edit(string id, UserEditModel editModel)
+        public async Task<string> Edit(string id, UserModel editModel)
         {
             return await _userInterface.Edit(id, editModel);
         }
