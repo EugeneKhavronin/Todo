@@ -11,5 +11,16 @@ namespace ToDo.Domain.Models.Todo
         /// Статус
         /// </summary>
         public bool IsComplete { get; set; }
+
+
+        public TodoEditModel()
+        {
+        }
+
+        public TodoEditModel(string name, bool isComplete)
+        {
+            Name = name;
+            IsComplete = isComplete;
+        }
     }
 }

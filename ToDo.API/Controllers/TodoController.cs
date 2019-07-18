@@ -52,7 +52,7 @@ namespace ToDo.API.Controllers
         /// <param name="todoItem">Модель задачи</param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<Guid> AddTodoItem(TodoCreateModel todoItem)
+        public async Task<Guid> CreateTodoItem(TodoCreateModel todoItem)
         {
             return await _todoService.Create(todoItem);
         }
@@ -64,7 +64,7 @@ namespace ToDo.API.Controllers
         /// <param name="todoItem">Модель задачи</param>
         /// <returns></returns>
         [HttpPut("{guid}")]
-        public async Task<Guid> EditTodoItem(Guid guid, TodoEditModel todoItem)
+        public async Task<Guid> PutTodoItem(Guid guid, TodoEditModel todoItem)
         {
             return await _todoService.Update(guid, todoItem);
         }

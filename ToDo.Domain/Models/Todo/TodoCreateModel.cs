@@ -18,5 +18,23 @@ namespace ToDo.Domain.Models.Todo
         /// Статус
         /// </summary>
         public bool IsComplete { get; set; }
+
+        public TodoCreateModel()
+        {
+        }
+
+        public TodoCreateModel(string name, bool isComplete)
+        {
+            Guid = Guid.NewGuid();
+            Name = name;
+            IsComplete = isComplete;
+        }
+
+        public TodoCreateModel(Guid guid, string name, bool isComplete)
+        {
+            Guid = guid;
+            Name = name;
+            IsComplete = isComplete;
+        }
     }
 }

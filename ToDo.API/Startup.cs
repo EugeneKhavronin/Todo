@@ -13,7 +13,6 @@ using System.IO;
 using ToDo.Database.Models;
 using ToDo.Database;
 using ToDo.Domain;
-using ToDo.Domain.Models.User;
 
 namespace ToDo.API
 {
@@ -102,35 +101,5 @@ namespace ToDo.API
                 c.RoutePrefix = string.Empty;
             });
         }
-
-        //конфиг (appsettings.json) v
-        //Fluent Api v
-        //коменты v
-        //Postgres в Docker (Postgres в DockerCompose) v
-
-
-        //id => Guid
-        //identity 
-        //user: id, login, password, name, surname, birthday, telephoneNumber
-        //LoginModel: login, password
-        //RegisterModel: login, password, name, surname, birthday, telephoneNumber
-        //TodoItem: userId
-        //
-
-        //UserController: Register/Edit/Delete
-        //AccountController: SignIn/SignOut v
-
-        // git установить, Github аккаунт, залить проект v
-        // -Areas v
-        // -pages v
-        // У тебя остается только Controllers, Migrations, Models, Views c одним файлом Index.cshtml v
-        // Почитай про SPA (Single Page Application)
-        // Все возвращаемые значения должны быть в формате Task<данные>:  v
-        // если создание или изменение, то id элемента 
-        // если получение, то сама модель, либо List моделей 
-        // если удаление, то просто Task
-        // 
-        // Комменты везде
-        // AutoMapper почитать        
     }
 }

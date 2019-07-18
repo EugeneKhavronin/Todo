@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using ToDo.Database.Models;
+﻿using System.Threading.Tasks;
 using ToDo.Domain.Models.User;
 
 namespace ToDo.Domain.Interfaces
@@ -15,7 +11,7 @@ namespace ToDo.Domain.Interfaces
         /// <param name="model">Модель регистрации</param>
         /// <returns></returns>
         Task<string> Register(UserModel model);
-        
+
         /// <summary>
         /// Изменение пользователя
         /// </summary>

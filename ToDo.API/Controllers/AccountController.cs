@@ -2,11 +2,9 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using ToDo.Database;
 using ToDo.Database.Models;
 using ToDo.Domain.Interfaces;
 using ToDo.Domain.Models.Account;
-using ToDo.Domain.Services;
 
 namespace ToDo.API.Controllers
 {

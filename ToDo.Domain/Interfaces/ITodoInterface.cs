@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ToDo.Domain.Models;
 using ToDo.Domain.Models.Todo;
 
 namespace ToDo.Domain.Interfaces

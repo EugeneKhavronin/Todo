@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ToDo.Database.Models;
 using ToDo.Domain.Models.Account;
 
 namespace ToDo.Domain.Interfaces
