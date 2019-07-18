@@ -13,7 +13,7 @@ namespace ToDo.Database.Models
         /// Уникальный идентификатор
         /// </summary>
         [Key]
-        public Guid Guid { get; set; }
+        public Guid Guid { get; set; } 
 
         /// <summary>
         /// Название задачи
